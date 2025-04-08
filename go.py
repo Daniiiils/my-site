@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from yookassa import Configuration, Payment
 import uuid
 import logging
+import os
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -10,7 +11,7 @@ l_ = logging.getLogger(__name__)
 
 # Создаём Flask-приложение, указываем папки для шаблонов и статических файлов
 app = Flask(__name__, template_folder='htmlki', static_folder='static')
-app.secret_key = "klyuch"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "klyuch")
 
 # Настройка Yookassa
 s = "1066313"
