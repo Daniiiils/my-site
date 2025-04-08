@@ -30,11 +30,11 @@ def glavn():
         c = bd()
         m = c.execute("SELECT * FROM events").fetchall()
         c.close()
-        return render_template('main.html', m=m)
+        return render_template('index.html', m=m)
     except:
         l.error("oshibka v spiske")
         flash("oshibka, ne vidno meropriyatiya")
-        return render_template('main.html', m=[])
+        return render_template('index.html', m=[])
 
 @a.route('/zapis/<int:i>', methods=['GET', 'POST'])
 def zapis(i):
