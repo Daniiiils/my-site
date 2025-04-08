@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Хранители Руны</title>
+    <title>Хранители руин</title> <!-- Изменили заголовок страницы -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='krasota.css') }}">
 </head>
 <body>
-    <h1>Хранители Руны</h1>
-    <h2>Список Прогулок</h2>
+    <h1>Хранители руин</h1> <!-- Изменили "Хранители Руны" на "Хранители руин" -->
+    <h2>список мероприятий</h2> <!-- Изменили "Список Прогулок" на "список мероприятий" -->
     {% if m %}
-        <ul>
-        {% for e in m %}
-            <li>
-                <strong>{{ e['Название'] }}</strong><br>
-                Дата: {{ e['Дата'] }}<br>
-                Время: {{ e['Время'] }}<br>
-                Место: {{ e['Место_сбора'] }}<br>
-                Цена: {{ e['Стоимость'] }} руб<br>
-                <a href="{{ url_for('zapis', i=e['ID']) }}" class="knopka">Записаться</a>
-            </li>
+        {% for i in m %}
+            <div class="meropriyatie">
+                <p>{{ i['Название'] }}</p>
+                <p>Дата: {{ i['Дата'] }}</p>
+                <p>Время: {{ i['Время'] }}</p>
+                <p>Место: {{ i['Место_сбора'] }}</p>
+                <p>Цена: {{ i['Стоимость'] }} руб</p>
+                <a href="{{ url_for('zapis', i=i['ID']) }}">Записаться</a>
+            </div>
         {% endfor %}
-        </ul>
     {% else %}
         <p>Прогулок нет</p>
     {% endif %}
-
-    {% with msg = get_flashed_messages() %}
-        {% if msg %}
-            <ul class="oshibki">
-            {% for x in msg %}
-                <li>{{ x }}</li>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="flash">{{ message }}</p>
             {% endfor %}
-            </ul>
         {% endif %}
     {% endwith %}
 </body>
