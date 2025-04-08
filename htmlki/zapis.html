@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>запись на прогулку</title>
+    <title>Запись на Прогулку</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='krasota.css') }}">
 </head>
 <body>
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+    <!-- Убедись, что logo.png есть в папке static/, иначе удали этот тег -->
+    <!-- <img src="{{ url_for('static', filename='logo.png') }}" alt="logo"> -->
     <header>
-        <a href="{{ url_for('glavn') }}">главная</a>
+        <a href="{{ url_for('glavn') }}">Главная</a>
     </header>
-    <h1>запись на: {{ e['Название'] }}</h1>
-    <p>дата: {{ e['Дата'] }} | время: {{ e['Время'] }} | цена: {{ e['Стоимость'] }} руб</p>
+    <h1>Запись на: {{ e['Название'] }}</h1>
+    <p>Дата: {{ e['Дата'] }} | Время: {{ e['Время'] }} | Цена: {{ e['Стоимость'] }} руб</p>
 
     <form method="POST">
-        <label for="imya">имя:</label><br>
+        <label for="imya">Имя:</label><br>
         <input type="text" id="imya" name="imya" required><br>
 
-        <label for="tel">телефон:</label><br>
+        <label for="tel">Телефон:</label><br>
         <input type="text" id="tel" name="tel" required><br>
 
-        <label for="otkuda">откуда узнали?</label><br>
+        <label for="otkuda">Откуда узнали?</label><br>
         <input type="text" id="otkuda" name="otkuda" required><br>
 
-        <label for="skolko">всего (включая вас)?</label><br>
+        <label for="skolko">Всего (включая вас)?</label><br>
         <input type="number" id="skolko" name="skolko" min="1" required><br>
 
-        <label>возраст участников:</label><br>
+        <label>Возраст участников:</label><br>
         <input type="checkbox" id="v1" name="vozrast" value="6-18 лет">
         <label for="v1">6-18 лет</label><br>
         <input type="checkbox" id="v2" name="vozrast" value="18-30">
@@ -38,36 +39,36 @@
         <input type="checkbox" id="v4" name="vozrast" value="50+">
         <label for="v4">50+</label><br>
 
-        <label for="deti">сколько детей до 18?</label><br>
+        <label for="deti">Сколько детей до 18?</label><br>
         <input type="number" id="deti" name="deti" min="0" required><br>
 
-        <label>новый участник?</label><br>
+        <label>Новый участник?</label><br>
         <input type="radio" id="n1" name="noviy" value="da" required>
-        <label for="n1">да</label>
+        <label for="n1">Да</label>
         <input type="radio" id="n2" name="noviy" value="net">
-        <label for="n2">нет</label><br>
+        <label for="n2">Нет</label><br>
 
-        <label for="komment">комментарий (если нет, оставь пустым):</label><br>
+        <label for="komment">Комментарий (если нет, оставь пустым):</label><br>
         <textarea id="komment" name="komment"></textarea><br>
 
-        <label>заказать обед?</label><br>
+        <label>Заказать обед?</label><br>
         <input type="radio" id="o1" name="obed" value="da" required>
-        <label for="o1">да</label>
+        <label for="o1">Да</label>
         <input type="radio" id="o2" name="obed" value="net">
-        <label for="o2">нет</label><br>
+        <label for="o2">Нет</label><br>
 
-        <label>напоминания?</label><br>
+        <label>Напоминания?</label><br>
         <input type="radio" id="r1" name="napominaniya" value="da" required>
-        <label for="r1">да</label>
+        <label for="r1">Да</label>
         <input type="radio" id="r2" name="napominaniya" value="net">
-        <label for="r2">нет</label><br>
+        <label for="r2">Нет</label><br>
 
-        <button type="submit">оплатить</button>
+        <button type="submit">Оплатить</button>
     </form>
 
-    <a href="{{ url_for('glavn') }}">на главную</a>
+    <a href="{{ url_for('glavn') }}">На главную</a>
     <footer>
-        <p>хранители руны 2025</p>
+        <p>Хранители Руны 2025</p>
     </footer>
 </body>
 </html>
