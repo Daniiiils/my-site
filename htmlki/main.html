@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>хранители руны</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='krasota.css') }}">
+</head>
+<body>
+    <h1>хранители руны</h1>
+    <h2>список прогулок</h2>
+    {% if m %}
+        <ul>
+        {% for e in m %}
+            <li>
+                <strong>{{ e['Название'] }}</strong><br>
+                дата: {{ e['Дата'] }}<br>
+                время: {{ e['Время'] }}<br>
+                место: {{ e['Место_сбора'] }}<br>
+                цена: {{ e['Стоимость'] }} руб<br>
+                <a href="{{ url_for('zapis', i=e['ID']) }}" class="knopka">записаться</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>прогулок нет</p>
+    {% endif %}
+
+    {% with msg = get_flashed_messages() %}
+        {% if msg %}
+            <ul class="oshibki">
+            {% for x in msg %}
+                <li>{{ x }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

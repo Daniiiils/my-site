@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto';
+    margin: 20px;
+    background-color: #e0e0e0;
+}
+
+h1, h2 {
+    color: #444;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li p {
+    margin: 5px 0;
+}
+
+li br {
+    line-height: 1.5;
+}
+
+.knopka {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.knopka:hover {
+    background-color: #e04e2d;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #22aa55;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e9944;
+}
+
+.oshibki {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.oshibki li {
+    background: #ffdddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header a {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}

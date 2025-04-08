@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>запись на прогулку</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='krasota.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+    <header>
+        <a href="{{ url_for('glavn') }}">главная</a>
+    </header>
+    <h1>запись на: {{ e['Название'] }}</h1>
+    <p>дата: {{ e['Дата'] }} | время: {{ e['Время'] }} | цена: {{ e['Стоимость'] }} руб</p>
+
+    <form method="POST">
+        <label for="imya">имя:</label><br>
+        <input type="text" id="imya" name="imya" required><br>
+
+        <label for="tel">телефон:</label><br>
+        <input type="text" id="tel" name="tel" required><br>
+
+        <label for="otkuda">откуда узнали?</label><br>
+        <input type="text" id="otkuda" name="otkuda" required><br>
+
+        <label for="skolko">всего (включая вас)?</label><br>
+        <input type="number" id="skolko" name="skolko" min="1" required><br>
+
+        <label>возраст участников:</label><br>
+        <input type="checkbox" id="v1" name="vozrast" value="6-18 лет">
+        <label for="v1">6-18 лет</label><br>
+        <input type="checkbox" id="v2" name="vozrast" value="18-30">
+        <label for="v2">18-30</label><br>
+        <input type="checkbox" id="v3" name="vozrast" value="30-50">
+        <label for="v3">30-50</label><br>
+        <input type="checkbox" id="v4" name="vozrast" value="50+">
+        <label for="v4">50+</label><br>
+
+        <label for="deti">сколько детей до 18?</label><br>
+        <input type="number" id="deti" name="deti" min="0" required><br>
+
+        <label>новый участник?</label><br>
+        <input type="radio" id="n1" name="noviy" value="da" required>
+        <label for="n1">да</label>
+        <input type="radio" id="n2" name="noviy" value="net">
+        <label for="n2">нет</label><br>
+
+        <label for="komment">комментарий (если нет, оставь пустым):</label><br>
+        <textarea id="komment" name="komment"></textarea><br>
+
+        <label>заказать обед?</label><br>
+        <input type="radio" id="o1" name="obed" value="da" required>
+        <label for="o1">да</label>
+        <input type="radio" id="o2" name="obed" value="net">
+        <label for="o2">нет</label><br>
+
+        <label>напоминания?</label><br>
+        <input type="radio" id="r1" name="napominaniya" value="da" required>
+        <label for="r1">да</label>
+        <input type="radio" id="r2" name="napominaniya" value="net">
+        <label for="r2">нет</label><br>
+
+        <button type="submit">оплатить</button>
+    </form>
+
+    <a href="{{ url_for('glavn') }}">на главную</a>
+    <footer>
+        <p>хранители руны 2025</p>
+    </footer>
+</body>
+</html>
